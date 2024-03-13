@@ -26,6 +26,8 @@ bld/
 [Oo]bj/
 [Ll]og/
 [Ll]ogs/
+Library/
+Logs/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
