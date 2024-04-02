@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FOV : MonoBehaviour
 {
@@ -9,106 +11,42 @@ public class FOV : MonoBehaviour
     public float height = 1.0f;
     public Color MeshColor = Color.red;
     public int RayCount = 30;
-
     public int RaySize = 30;
 
-    Mesh mesh;
+    public GameObject trianglePrefab;
+    //private Material material;
+    //private MeshRenderer meshRenderer;
+
+    //public Mesh mesh;
     // Start is called before the first frame update
     void Start()
     {
-        
+        //meshRenderer = GetComponent<MeshRenderer>();
+        //material = meshRenderer.material;
     }
 
     // Update is called once per frame
     void Update()
     {
         RayCast();
+        //RaycastHit hit;
+        //if (Physics.Raycast(transform.position, transform.forward, out hit, distance))
+        //{
+        //    UpdateShaderProperties(hit.point, hit.normal);
+        //}
     }
 
-    Mesh CreateShapeMesh()
-    {
-        Mesh mesh = new Mesh();
+    //private void UpdateShaderProperties(Vector3 hitPoint, Vector3 hitNormal)
+    //{
+    //    // Calculate angle and distance of detection
+    //    float hitAngle = Vector3.Angle(transform.forward, hitPoint - transform.position);
+    //    float hitDistance = Vector3.Distance(transform.position, hitPoint);
 
-        int numTriangles = 8;
-        int numVerticies = numTriangles * 3;
+    //    // Set shader properties
+    //    material.SetFloat("_ConeAngle", hitAngle);
+    //    material.SetFloat("_ConeDistance", hitDistance);
+    //}
 
-        Vector3[] vertices = new Vector3[numVerticies];
-        int[] traingles = new int[numVerticies];
-
-        Vector3 bottomCenter = Vector3.zero;
-        Vector3 bottomLeft = Quaternion.Euler(0, -angle, 0) * Vector3.forward * distance;
-        Vector3 bottomRight = Quaternion.Euler(0, angle, 0) * Vector3.forward * distance;
-
-        Vector3 topCenter = bottomCenter + Vector3.up * height;
-        Vector3 topRight = bottomRight + Vector3.up * height;
-        Vector3 topLeft = bottomLeft + Vector3.up * height;
-
-        int vert = 0;
-        //left side
-        vertices[vert++] = bottomCenter;
-        vertices[vert++] = bottomLeft;
-        vertices[vert++] = topLeft;
-
-        vertices[vert++] = topLeft;
-        vertices[vert++] = topCenter;
-        vertices[vert++] = bottomCenter;
-        //right side
-
-        vertices[vert++] = bottomCenter;
-        vertices[vert++] = topCenter;
-        vertices[vert++] = topRight;
-
-        vertices[vert++] = topRight;
-        vertices[vert++] = bottomRight;
-        vertices[vert++] = bottomCenter;
-
-        //far side
-        vertices[vert++] = bottomLeft;
-        vertices[vert++] = bottomRight;
-        vertices[vert++] = topRight;
-
-        vertices[vert++] = topRight;
-        vertices[vert++] = topLeft;
-        vertices[vert++] = bottomLeft;
-
-
-        //top
-        vertices[vert++] = topCenter;
-        vertices[vert++] = topLeft;
-        vertices[vert++] = topRight;
-
-        vertices[vert++] = bottomCenter;
-        vertices[vert++] = bottomRight;
-        vertices[vert++] = bottomLeft;
-
-        for (int i = 0; i < numVerticies; ++i)
-        {
-            traingles[i] = i;
-        }
-
-        mesh.vertices = vertices;
-        mesh.triangles = traingles;
-        mesh.RecalculateNormals();
-        return mesh;
-
-    }
-
-
-    private void OnValidate()
-    {
-        mesh = CreateShapeMesh();
-    }
-
-    private void OnDrawGizmos()
-    {
-        if (mesh)
-        {
-            Gizmos.color = MeshColor;
-            Gizmos.DrawMesh(mesh, transform.position, transform.rotation);
-        }
-    }
-
-    
     public void RayCast()
     {
         int PlayerLayer = 1 << LayerMask.NameToLayer("Player");
@@ -130,6 +68,14 @@ public class FOV : MonoBehaviour
             {
                 Debug.DrawLine(rayOrigin, hit.point, Color.blue); // display the blue rays where the capsule was spotted from
                 Debug.Log("Hit player: " + hit.collider.gameObject.name);
+                //Player Found
+                SceneManager.LoadScene("Finished");
+                 // Instantiate the triangle GameObject at the hit point
+                GameObject triangle = Instantiate(trianglePrefab, hit.point, Quaternion.identity);
+
+                // Calculate rotation to align triangle with ray direction
+                Quaternion rotation = Quaternion.LookRotation(rayDirection, Vector3.up);
+                triangle.transform.rotation = rotation;
             }
             else
             {

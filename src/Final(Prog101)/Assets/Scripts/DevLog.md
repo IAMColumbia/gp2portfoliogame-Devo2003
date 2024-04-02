@@ -20,3 +20,11 @@ on the screen to show how much time is left to collect the orbs on the ground. I
 is spotted by a camera that also triggers the game over screen. Then program the finish point once the player has collect all 5 orbs and then display the
 win screen with asking the player if they want to retry.
 
+March 26, 2024
+
+Today I worked on getting the menus such as the Main, Game over menu to give the player to choose if they want to play the game again, or quit the game
+completely. Unitys canvas sucks so I used 3D objects to act as buttons, but had a bit a trouble because when dealing with 3D objects you need setup a raycast
+to be able to click on them. I have officially have everything from a start menu to the gameplay of the game and an end point which when collected it loads up
+a Retry menu. The only thing Im missing is still the display or vision for the player of where the camera is looking. Another thing is fixing the movement
+because it messes up when the player collides with the walls collider. 
+
