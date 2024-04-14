@@ -20,15 +20,26 @@ public class PlayerCollision : MonoBehaviour
     {
         //om = new OrbManager();
     }
-    
+
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.CompareTag("PickUp"))
         {
-            Debug.Log("Player collided with an orb!");
-            Destroy(other.gameObject);
-            //OrbCount++;
-            om.CollectOrb();
+            Orb o = other.gameObject.GetComponent<Orb>();
+            if (o != null)
+            {
+                if (o.state != Orb.OrbState.Collected)
+                {
+                    Debug.Log("Player collided with an orb!");
+                    o.Collect();
+                    //Destroy(other.gameObject);
+                    //OrbCount++;
+                    om.CollectOrb();
+                }
+
+            }
+
         }
 
         if (other.CompareTag("Finish"))
@@ -37,5 +48,8 @@ public class PlayerCollision : MonoBehaviour
         }
     }
 
-    
+
 }
+
+    
+

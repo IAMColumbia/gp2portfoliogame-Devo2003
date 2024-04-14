@@ -759,7 +759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e452e8caec8c748f3bdf1e0a4de7c5cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 2.5
+  distance: 40
   angle: 20
   height: 0.5
   MeshColor: {r: 1, g: 0, b: 0, a: 1}
@@ -1326,6 +1326,7 @@ GameObject:
   - component: {fileID: 522059492}
   - component: {fileID: 522059491}
   - component: {fileID: 522059490}
+  - component: {fileID: 522059494}
   m_Layer: 0
   m_Name: BlueOrb
   m_TagString: PickUp
@@ -1419,6 +1420,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &522059494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522059489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53361eb3041443047b0e81a30c743fbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
 --- !u!43 &572606519
 Mesh:
   m_ObjectHideFlags: 0
@@ -1632,7 +1646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e452e8caec8c748f3bdf1e0a4de7c5cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 2.5
+  distance: 40
   angle: 20
   height: 0.5
   MeshColor: {r: 1, g: 0, b: 0, a: 1}
@@ -1955,7 +1969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e452e8caec8c748f3bdf1e0a4de7c5cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 2.5
+  distance: 40
   angle: 20
   height: 0.5
   MeshColor: {r: 1, g: 0, b: 0, a: 1}
@@ -2475,6 +2489,7 @@ GameObject:
   - component: {fileID: 835463735}
   - component: {fileID: 835463734}
   - component: {fileID: 835463733}
+  - component: {fileID: 835463737}
   m_Layer: 0
   m_Name: RedOrb
   m_TagString: PickUp
@@ -2568,6 +2583,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &835463737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835463732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53361eb3041443047b0e81a30c743fbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
 --- !u!43 &857174506
 Mesh:
   m_ObjectHideFlags: 0
@@ -2897,7 +2925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e452e8caec8c748f3bdf1e0a4de7c5cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 2.5
+  distance: 40
   angle: 20
   height: 0.5
   MeshColor: {r: 1, g: 0, b: 0, a: 1}
@@ -3151,6 +3179,7 @@ GameObject:
   - component: {fileID: 1072612785}
   - component: {fileID: 1072612784}
   - component: {fileID: 1072612783}
+  - component: {fileID: 1072612787}
   m_Layer: 0
   m_Name: GreenOrb
   m_TagString: PickUp
@@ -3244,6 +3273,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1072612787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072612782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53361eb3041443047b0e81a30c743fbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
 --- !u!43 &1093378286
 Mesh:
   m_ObjectHideFlags: 0
@@ -4357,6 +4399,7 @@ GameObject:
   - component: {fileID: 1523025228}
   - component: {fileID: 1523025229}
   - component: {fileID: 1523025230}
+  - component: {fileID: 1523025231}
   m_Layer: 31
   m_Name: Capsule
   m_TagString: Player
@@ -4550,6 +4593,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57b5860f76d1b496aaf157dc07eb3483, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1523025231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523025220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41f746f10215e46cba72ca32d2c79e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endPointPrefab: {fileID: 1061579004}
+  OrbCount: 0
 --- !u!1 &1547113092
 GameObject:
   m_ObjectHideFlags: 0
@@ -4562,6 +4619,7 @@ GameObject:
   - component: {fileID: 1547113096}
   - component: {fileID: 1547113095}
   - component: {fileID: 1547113094}
+  - component: {fileID: 1547113098}
   m_Layer: 0
   m_Name: OrangeOrb
   m_TagString: PickUp
@@ -4655,6 +4713,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1547113098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547113092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53361eb3041443047b0e81a30c743fbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
 --- !u!1 &1563568466
 GameObject:
   m_ObjectHideFlags: 0
@@ -4855,7 +4926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e452e8caec8c748f3bdf1e0a4de7c5cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 2.5
+  distance: 40
   angle: 20
   height: 0.5
   MeshColor: {r: 1, g: 0, b: 0, a: 1}
@@ -5316,7 +5387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e452e8caec8c748f3bdf1e0a4de7c5cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 2.5
+  distance: 40
   angle: 20
   height: 0.5
   MeshColor: {r: 1, g: 0, b: 0, a: 1}
@@ -5423,6 +5494,7 @@ GameObject:
   - component: {fileID: 1795537189}
   - component: {fileID: 1795537188}
   - component: {fileID: 1795537187}
+  - component: {fileID: 1795537191}
   m_Layer: 0
   m_Name: YellowOrb
   m_TagString: PickUp
@@ -5516,6 +5588,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1795537191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795537186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53361eb3041443047b0e81a30c743fbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
 --- !u!1 &1858036735
 GameObject:
   m_ObjectHideFlags: 0
@@ -6707,11 +6792,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2278276052768300697, guid: f6b2a4e578a13431d879da1cdf076306, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17
+      value: -18.04
       objectReference: {fileID: 0}
     - target: {fileID: 2278276052768300697, guid: f6b2a4e578a13431d879da1cdf076306, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7
+      value: 19.19
       objectReference: {fileID: 0}
     - target: {fileID: 2278276052768300697, guid: f6b2a4e578a13431d879da1cdf076306, type: 3}
       propertyPath: m_LocalPosition.z
