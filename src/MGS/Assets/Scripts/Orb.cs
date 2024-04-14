@@ -1,84 +1,89 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+public enum OrbState { Normal, Collected, Visible, Invisible }
 
 public class Orb : MonoBehaviour
 {
-    //public GameObject orbPrefab;
-    //public Transform plane;
-    //public List<Transform> obstacles;
-
-    //public int OrbNums = 5;
-    //public List<GameObject> objects = new List<GameObject>();
 
     public OrbState state;
 
-    //public int 
+    public float VisibleTime = 3f;
+    public float InvisibleTime = 3f;
 
-    public enum OrbState { Normal, Collected }
+    private float timer;
+
+    //private bool isAppearing = false;
+    private Coroutine appearCoroutine;
+
+
     // Start is called before the first frame update
     void Start()
     {
         state = OrbState.Normal;
-        //SpawnOrbs();
+        timer = VisibleTime;
     }
 
     // Update is called once per frame
     void Update()
     {
+        timer -= Time.deltaTime;
+        //appearCoroutine = StartCoroutine(OrbAppearFunction());
         switch (state)
         {
             case OrbState.Normal:
+                state = OrbState.Visible;
+                timer = VisibleTime;
+                gameObject.SetActive(true);
                 break;
+            
+            case OrbState.Visible:
+                if (timer <= 0)
+                {
+                    state = OrbState.Invisible;
+                    timer = InvisibleTime;
+                    gameObject.SetActive(false);
+                }
+                break;
+
+            case OrbState.Invisible:
+                if (timer <= 0)
+                {
+                    state = OrbState.Visible;
+                    timer = VisibleTime;
+                    gameObject.SetActive(true);
+                }
+                break;
+
             case OrbState.Collected:
                 Destroy(this.gameObject);
                 break;
         }
 
-
+        Debug.Log("Timer value: " + timer);
     }
 
-    //public void SpawnOrbs()
+    //IEnumerator OrbAppearFunction()
     //{
-    //    for (int i = 0; i < OrbNums; i++)
+    //    if ()
     //    {
-    //        Vector3 randPosition = GenerateRandPosition();
-    //        GameObject newOrb = Instantiate(orbPrefab, randPosition, Quaternion.identity);
-    //        //newOrb.transform.parent = this.transform;
+    //        Debug.Log("Orb Disappear");
+    //        gameObject.SetActive(false);
+    //        yield return new WaitForSeconds(InvisibleTime);
+
+
+    //        Debug.Log("Orb Appear");
+    //        gameObject.SetActive(true);
+    //        yield return new WaitForSeconds(VisibleTime);
+
+            
+
+           
+    //        yield return null;
+    //        Debug.Log("Looping...");
     //    }
     //}
 
-    //private Vector3 GenerateRandPosition()
-    //{
-    //    //Random rand = new Random();
-    //    Vector3 randomPosition = new Vector3(UnityEngine.Random.Range(plane.position.x - plane.localScale.x / 2, plane.position.x + plane.localScale.x / 2),
-    //                                         plane.position.y,
-    //                                         UnityEngine.Random.Range(plane.position.z - plane.localScale.z / 2, plane.position.z + plane.localScale.z / 2));
-
-    //    // Check if the random position collides with any obstacles
-    //    while (PositionCollidesWithObstacles(randomPosition))
-    //    {
-    //        randomPosition = new Vector3(UnityEngine.Random.Range(plane.position.x - plane.localScale.x / 2, plane.position.x + plane.localScale.x / 2),
-    //                                     plane.position.y,
-    //                                     UnityEngine.Random.Range(plane.position.z - plane.localScale.z / 2, plane.position.z + plane.localScale.z / 2));
-    //    }
-
-    //    return randomPosition;
-    //}
-
-    //// Check if a position collides with any obstacles
-    //bool PositionCollidesWithObstacles(Vector3 position)
-    //{
-    //    foreach (Transform obstacle in obstacles)
-    //    {
-    //        Collider obstacleCollider = obstacle.GetComponent<Collider>();
-    //        if (obstacleCollider.bounds.Contains(position)) // Check if the position is within the bounds of the obstacle's collider
-    //        {
-    //            return true; // Position collides with obstacle
-    //        }
-    //    }
-    //    return false; // Position doesn't collide with any obstacles
-    //}
     public void Collect()
     {
         this.state = OrbState.Collected;

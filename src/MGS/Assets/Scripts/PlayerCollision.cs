@@ -26,10 +26,11 @@ public class PlayerCollision : MonoBehaviour
 
         if (other.CompareTag("PickUp"))
         {
+            //gameObject.SetActive(false);
             Orb o = other.gameObject.GetComponent<Orb>();
             if (o != null)
             {
-                if (o.state != Orb.OrbState.Collected)
+                if (o.state != OrbState.Collected)
                 {
                     Debug.Log("Player collided with an orb!");
                     o.Collect();

@@ -1433,6 +1433,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  VisibleTime: 3
+  InvisibleTime: 2
 --- !u!43 &572606519
 Mesh:
   m_ObjectHideFlags: 0
@@ -2596,6 +2598,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  VisibleTime: 3
+  InvisibleTime: 2
 --- !u!43 &857174506
 Mesh:
   m_ObjectHideFlags: 0
@@ -3286,6 +3290,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  VisibleTime: 3
+  InvisibleTime: 2
 --- !u!43 &1093378286
 Mesh:
   m_ObjectHideFlags: 0
@@ -4511,7 +4517,7 @@ Transform:
   m_GameObject: {fileID: 1523025220}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 0.54, z: -1}
+  m_LocalPosition: {x: -0.96, y: 0.54, z: -0.97}
   m_LocalScale: {x: 0.43702, y: 0.43088707, z: 0.40700683}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4726,6 +4732,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  VisibleTime: 3
+  InvisibleTime: 2
 --- !u!1 &1563568466
 GameObject:
   m_ObjectHideFlags: 0
@@ -5601,6 +5609,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  VisibleTime: 3
+  InvisibleTime: 2
 --- !u!1 &1858036735
 GameObject:
   m_ObjectHideFlags: 0
