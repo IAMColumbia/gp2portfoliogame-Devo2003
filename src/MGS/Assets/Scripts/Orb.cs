@@ -32,35 +32,35 @@ public class Orb : MonoBehaviour
         switch (state)
         {
             case OrbState.Normal:
-                state = OrbState.Visible;
-                timer = VisibleTime;
-                gameObject.SetActive(true);
+                //state = OrbState.Visible;
+                ///timer = VisibleTime;
+                //gameObject.SetActive(true);
                 break;
             
-            case OrbState.Visible:
-                if (timer <= 0)
-                {
-                    state = OrbState.Invisible;
-                    timer = InvisibleTime;
-                    gameObject.SetActive(false);
-                }
-                break;
+            //case OrbState.Visible:
+            //    if (timer <= 0)
+            //    {
+            //        state = OrbState.Invisible;
+            //        timer = InvisibleTime;
+            //        gameObject.SetActive(false);
+            //    }
+            //    break;
 
-            case OrbState.Invisible:
-                if (timer <= 0)
-                {
-                    state = OrbState.Visible;
-                    timer = VisibleTime;
-                    gameObject.SetActive(true);
-                }
-                break;
+            //case OrbState.Invisible:
+            //    if (timer <= 0)
+            //    {
+            //        state = OrbState.Visible;
+            //        timer = VisibleTime;
+            //        gameObject.SetActive(true);
+            //    }
+            //    break;
 
             case OrbState.Collected:
                 Destroy(this.gameObject);
                 break;
         }
 
-        Debug.Log("Timer value: " + timer);
+        //Debug.Log("Timer value: " + timer);
     }
 
     //IEnumerator OrbAppearFunction()
