@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerCollision : MonoBehaviour
 {
     // Start is called before the first frame update
+    public AudioClip VictorySound;
     void Start()
     {
         om = FindObjectOfType<OrbManager>();
@@ -34,8 +35,6 @@ public class PlayerCollision : MonoBehaviour
                 {
                     Debug.Log("Player collided with an orb!");
                     o.Collect();
-                    //Destroy(other.gameObject);
-                    //OrbCount++;
                     om.CollectOrb();
                 }
 
@@ -46,6 +45,7 @@ public class PlayerCollision : MonoBehaviour
         if (other.CompareTag("Finish"))
         {
             SceneManager.LoadScene("Finished");
+            AudioSource.PlayClipAtPoint(VictorySound, transform.position);
         }
     }
 

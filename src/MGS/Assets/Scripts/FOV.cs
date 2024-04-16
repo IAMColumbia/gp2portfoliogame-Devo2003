@@ -13,7 +13,7 @@ public class FOV : MonoBehaviour
     public int RayCount = 30;
     public int RaySize = 30;
 
-    public GameObject trianglePrefab;
+    //public GameObject trianglePrefab;
     //private Material material;
     //private MeshRenderer meshRenderer;
 
@@ -69,13 +69,13 @@ public class FOV : MonoBehaviour
                 Debug.DrawLine(rayOrigin, hit.point, Color.blue); // display the blue rays where the capsule was spotted from
                 Debug.Log("Hit player: " + hit.collider.gameObject.name);
                 //Player Found
-                SceneManager.LoadScene("Finished");
+                SceneManager.LoadScene("GameOver");
                  // Instantiate the triangle GameObject at the hit point
-                GameObject triangle = Instantiate(trianglePrefab, hit.point, Quaternion.identity);
+                //GameObject triangle = Instantiate(trianglePrefab, hit.point, Quaternion.identity);
 
                 // Calculate rotation to align triangle with ray direction
                 Quaternion rotation = Quaternion.LookRotation(rayDirection, Vector3.up);
-                triangle.transform.rotation = rotation;
+                //triangle.transform.rotation = rotation;
             }
             else
             {

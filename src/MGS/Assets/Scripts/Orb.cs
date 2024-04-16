@@ -10,13 +10,12 @@ public class Orb : MonoBehaviour
 
     public float VisibleTime = 3f;
     public float InvisibleTime = 3f;
-
     private float timer;
 
     //private bool isAppearing = false;
     private Coroutine appearCoroutine;
 
-
+    public AudioClip PickUpSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +56,7 @@ public class Orb : MonoBehaviour
 
             case OrbState.Collected:
                 Destroy(this.gameObject);
+                AudioSource.PlayClipAtPoint(PickUpSound, transform.position);
                 break;
         }
 
