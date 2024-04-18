@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-   
+    public AudioClip StartSound;
+
     void Update()
     {
         CheckMouseClick();
@@ -15,6 +16,7 @@ public class MainMenu : MonoBehaviour
     {
         if (gameObject.name == "Start")
         {
+            AudioSource.PlayClipAtPoint(StartSound, transform.position);
             SceneManager.LoadScene("Game");
         }
 

@@ -1939,9 +1939,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  VisibleTime: 3
-  InvisibleTime: 2
+  timer: 0
+  time: 3
   PickUpSound: {fileID: 8300000, guid: 026af62c1e9cc3c4abe1d23fafe01f67, type: 3}
+  normalScale: {x: 0, y: 0, z: 0}
+  visibleScale: {x: 1, y: 1, z: 1}
+  InvisibleScale: {x: 0, y: 0, z: 0}
 --- !u!43 &572606519
 Mesh:
   m_ObjectHideFlags: 0
@@ -3103,9 +3106,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  VisibleTime: 3
-  InvisibleTime: 2
+  timer: 0
+  time: 4
   PickUpSound: {fileID: 8300000, guid: 026af62c1e9cc3c4abe1d23fafe01f67, type: 3}
+  normalScale: {x: 0, y: 0, z: 0}
+  visibleScale: {x: 1, y: 1, z: 1}
+  InvisibleScale: {x: 0, y: 0, z: 0}
 --- !u!43 &857174506
 Mesh:
   m_ObjectHideFlags: 0
@@ -3795,9 +3801,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  VisibleTime: 3
-  InvisibleTime: 2
+  timer: 0
+  time: 3
   PickUpSound: {fileID: 8300000, guid: 026af62c1e9cc3c4abe1d23fafe01f67, type: 3}
+  normalScale: {x: 0, y: 0, z: 0}
+  visibleScale: {x: 1, y: 1, z: 1}
+  InvisibleScale: {x: 0, y: 0, z: 0}
 --- !u!43 &1093378286
 Mesh:
   m_ObjectHideFlags: 0
@@ -5103,9 +5112,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  VisibleTime: 3
-  InvisibleTime: 2
+  timer: 0
+  time: 4
   PickUpSound: {fileID: 8300000, guid: 026af62c1e9cc3c4abe1d23fafe01f67, type: 3}
+  normalScale: {x: 0, y: 0, z: 0}
+  visibleScale: {x: 1, y: 1, z: 1}
+  InvisibleScale: {x: 0, y: 0, z: 0}
 --- !u!1 &1563568466
 GameObject:
   m_ObjectHideFlags: 0
@@ -6062,9 +6074,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  VisibleTime: 3
-  InvisibleTime: 2
+  timer: 0
+  time: 5
   PickUpSound: {fileID: 8300000, guid: 026af62c1e9cc3c4abe1d23fafe01f67, type: 3}
+  normalScale: {x: 0, y: 0, z: 0}
+  visibleScale: {x: 1, y: 1, z: 1}
+  InvisibleScale: {x: 0, y: 0, z: 0}
 --- !u!1 &1858036735
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,39 +13,20 @@ public class FOV : MonoBehaviour
     public int RayCount = 30;
     public int RaySize = 30;
 
-    //public GameObject trianglePrefab;
-    //private Material material;
-    //private MeshRenderer meshRenderer;
-
-    //public Mesh mesh;
     // Start is called before the first frame update
     void Start()
     {
-        //meshRenderer = GetComponent<MeshRenderer>();
-        //material = meshRenderer.material;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         RayCast();
-        //RaycastHit hit;
-        //if (Physics.Raycast(transform.position, transform.forward, out hit, distance))
-        //{
-        //    UpdateShaderProperties(hit.point, hit.normal);
-        //}
+        
     }
 
-    //private void UpdateShaderProperties(Vector3 hitPoint, Vector3 hitNormal)
-    //{
-    //    // Calculate angle and distance of detection
-    //    float hitAngle = Vector3.Angle(transform.forward, hitPoint - transform.position);
-    //    float hitDistance = Vector3.Distance(transform.position, hitPoint);
-
-    //    // Set shader properties
-    //    material.SetFloat("_ConeAngle", hitAngle);
-    //    material.SetFloat("_ConeDistance", hitDistance);
-    //}
+    
 
     public void RayCast()
     {
@@ -70,12 +51,11 @@ public class FOV : MonoBehaviour
                 Debug.Log("Hit player: " + hit.collider.gameObject.name);
                 //Player Found
                 SceneManager.LoadScene("GameOver");
-                 // Instantiate the triangle GameObject at the hit point
-                //GameObject triangle = Instantiate(trianglePrefab, hit.point, Quaternion.identity);
+                
 
                 // Calculate rotation to align triangle with ray direction
                 Quaternion rotation = Quaternion.LookRotation(rayDirection, Vector3.up);
-                //triangle.transform.rotation = rotation;
+               
             }
             else
             {

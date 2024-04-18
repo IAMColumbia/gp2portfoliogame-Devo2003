@@ -1,88 +1,73 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
-public enum OrbState { Normal, Collected, Visible, Invisible }
+public enum OrbState { Collected, Visible, Invisible }
 
 public class Orb : MonoBehaviour
 {
-
     public OrbState state;
-
-    public float VisibleTime = 3f;
-    public float InvisibleTime = 3f;
-    private float timer;
-
-    //private bool isAppearing = false;
-    private Coroutine appearCoroutine;
+    public float timer;
+    public float time = 3;
 
     public AudioClip PickUpSound;
+
+    public Vector3 normalScale;
+    public Vector3 visibleScale = Vector3.one;
+    public Vector3 InvisibleScale = Vector3.zero;
     // Start is called before the first frame update
     void Start()
     {
-        state = OrbState.Normal;
-        timer = VisibleTime;
+        state = OrbState.Visible;
+        this.timer = time;
+        //normalScale = transform.localScale;
     }
 
     // Update is called once per frame
     void Update()
     {
+        UpdateTimer();
         timer -= Time.deltaTime;
-        //appearCoroutine = StartCoroutine(OrbAppearFunction());
         switch (state)
         {
-            case OrbState.Normal:
-                //state = OrbState.Visible;
-                ///timer = VisibleTime;
-                //gameObject.SetActive(true);
+            case OrbState.Visible:
+                this.gameObject.GetComponent<MeshRenderer>().enabled = true;
+                //UpdateScale(visibleScale);
                 break;
-            
-            //case OrbState.Visible:
-            //    if (timer <= 0)
-            //    {
-            //        state = OrbState.Invisible;
-            //        timer = InvisibleTime;
-            //        gameObject.SetActive(false);
-            //    }
-            //    break;
 
-            //case OrbState.Invisible:
-            //    if (timer <= 0)
-            //    {
-            //        state = OrbState.Visible;
-            //        timer = VisibleTime;
-            //        gameObject.SetActive(true);
-            //    }
-            //    break;
+            case OrbState.Invisible:
+                
+                this.gameObject.GetComponent<MeshRenderer>().enabled = false;
+                //UpdateScale(InvisibleScale);
+                break;
 
             case OrbState.Collected:
                 Destroy(this.gameObject);
                 AudioSource.PlayClipAtPoint(PickUpSound, transform.position);
                 break;
         }
-
-        //Debug.Log("Timer value: " + timer);
     }
 
-    //IEnumerator OrbAppearFunction()
-    //{
-    //    if ()
-    //    {
-    //        Debug.Log("Orb Disappear");
-    //        gameObject.SetActive(false);
-    //        yield return new WaitForSeconds(InvisibleTime);
-
-
-    //        Debug.Log("Orb Appear");
-    //        gameObject.SetActive(true);
-    //        yield return new WaitForSeconds(VisibleTime);
-
-            
-
-           
-    //        yield return null;
-    //        Debug.Log("Looping...");
-    //    }
-    //}
+    public void UpdateTimer()
+    {
+        this.timer -= Time.deltaTime;
+        if (timer < 0)
+        {
+            if (state == OrbState.Visible)
+            {
+                state = OrbState.Invisible;
+            }
+            else
+            {
+                state = OrbState.Visible;
+            }
+            timer = time;
+        }
+    }
+    public void UpdateScale(Vector3 scale)
+    {
+        transform.localScale = scale;
+    }
 
     public void Collect()
     {

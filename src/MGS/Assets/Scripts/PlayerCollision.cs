@@ -29,14 +29,17 @@ public class PlayerCollision : MonoBehaviour
         {
             //gameObject.SetActive(false);
             Orb o = other.gameObject.GetComponent<Orb>();
-            if (o != null)
+            if (o != null && o.state == OrbState.Visible)
             {
-                if (o.state != OrbState.Collected)
-                {
-                    Debug.Log("Player collided with an orb!");
-                    o.Collect();
-                    om.CollectOrb();
-                }
+                Debug.Log("Player collided with an orb!");
+                o.Collect();
+                om.CollectOrb();
+                //if (o.state != OrbState.Collected)
+                //{
+                //    Debug.Log("Player collided with an orb!");
+                //    o.Collect();
+                //    om.CollectOrb();
+                //}
 
             }
 
