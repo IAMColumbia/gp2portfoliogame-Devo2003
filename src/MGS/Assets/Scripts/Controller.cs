@@ -11,7 +11,9 @@ public class Controller : MonoBehaviour
     public float XMovement;
     public float YMovement;
 
+
     Vector3 Vec;
+
     
     // Start is called before the first frame update
     void Start()
@@ -23,31 +25,17 @@ public class Controller : MonoBehaviour
     void Update()
     {
         ControllerMovement();
+
+        
     }
 
     public void ControllerMovement()
     {
-        //XMovement = Input.GetAxis("Horizontal");
-        //YMovement = Input.GetAxis("Vertical");
-
-        //if (Input.GetKey(KeyCode.W))
-        //{
-        //    ascend = 1.0f;
-        //}
-        //else if (Input.GetKey(KeyCode.S))
-        //{
-        //    ascend = -1.0f;
-        //}
-        //Vector3 movement = new Vector3(XMovement, ascend, YMovement);
-        ////rb.AddForce(movement * speed);
-        //transform.Translate(movement * speed * Time.deltaTime, Space.World);
-
+ 
         Vec = transform.localPosition;
         Vec.x += Input.GetAxis("Horizontal") * Time.deltaTime * 5;
         Vec.z += Input.GetAxis("Vertical") * Time.deltaTime * 5;
         transform.localPosition = Vec;
 
     }
-
-
 }

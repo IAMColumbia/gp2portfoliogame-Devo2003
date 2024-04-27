@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class OrbManager : MonoBehaviour
 {
+
+    ScoreManager sm;
     public GameObject endPointPrefab;
 
     public int OrbCount = 0;
@@ -22,6 +24,7 @@ public class OrbManager : MonoBehaviour
     
     public void CollectOrb()
     {
+        sm.setScore += 150;
         OrbCount++;
         if (OrbCount == 5)
         {

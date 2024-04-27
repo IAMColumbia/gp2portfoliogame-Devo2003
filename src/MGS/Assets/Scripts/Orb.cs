@@ -43,6 +43,7 @@ public class Orb : MonoBehaviour
 
             case OrbState.Collected:
                 Destroy(this.gameObject);
+
                 AudioSource.PlayClipAtPoint(PickUpSound, transform.position);
                 break;
         }

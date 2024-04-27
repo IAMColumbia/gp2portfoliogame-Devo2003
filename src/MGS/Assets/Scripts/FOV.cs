@@ -13,6 +13,7 @@ public class FOV : MonoBehaviour
     public int RayCount = 30;
     public int RaySize = 30;
 
+    ScoreManager sm;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +51,8 @@ public class FOV : MonoBehaviour
                 Debug.DrawLine(rayOrigin, hit.point, Color.blue); // display the blue rays where the capsule was spotted from
                 Debug.Log("Hit player: " + hit.collider.gameObject.name);
                 //Player Found
+                sm.setScore = 0;
+
                 SceneManager.LoadScene("GameOver");
                 
 
