@@ -17,7 +17,11 @@ public class FOV : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        sm = GameObject.FindObjectOfType<ScoreManager>();
+        if (sm != null)
+        {
+            Debug.LogError("No Scoremanager!");
+        }
     }
 
     // Update is called once per frame

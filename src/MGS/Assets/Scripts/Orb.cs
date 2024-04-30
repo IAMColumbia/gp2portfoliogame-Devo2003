@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+
+
 public enum OrbState { Collected, Visible, Invisible }
 
 public class Orb : MonoBehaviour
