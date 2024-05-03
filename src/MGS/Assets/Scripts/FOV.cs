@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Assets.Scripts;
 
 public class FOV : MonoBehaviour
 {
@@ -13,20 +14,22 @@ public class FOV : MonoBehaviour
     public int RayCount = 30;
     public int RaySize = 30;
 
-    ScoreManager sm;
+   
+    //ScoreManager sm;
     // Start is called before the first frame update
     void Start()
     {
-        sm = GameObject.FindObjectOfType<ScoreManager>();
-        if (sm != null)
-        {
-            Debug.LogError("No Scoremanager!");
-        }
+        //sm = GameObject.FindObjectOfType<ScoreManager>();
+        //if (sm != null)
+        //{
+        //    Debug.LogError("No Scoremanager!");
+        //}
     }
 
     // Update is called once per frame
     void Update()
     {
+       
         RayCast();
         
     }
@@ -55,7 +58,7 @@ public class FOV : MonoBehaviour
                 Debug.DrawLine(rayOrigin, hit.point, Color.blue); // display the blue rays where the capsule was spotted from
                 Debug.Log("Hit player: " + hit.collider.gameObject.name);
                 //Player Found
-                sm.setScore = 0;
+                Score.CurrentScore -= 250;
 
                 SceneManager.LoadScene("GameOver");
                 

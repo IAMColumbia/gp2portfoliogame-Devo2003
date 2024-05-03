@@ -1,10 +1,11 @@
+using Assets.Scripts;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ShapeChange : MonoBehaviour
 {
-    ScoreManager sm;
+    //ScoreManager sm;
     public GameObject NormalDisguise;
     public GameObject boxDiguise;
 
@@ -14,13 +15,16 @@ public class ShapeChange : MonoBehaviour
     // Start is called before the first frame update
 
    
+
     void Start()
     {
-        sm = GameObject.FindObjectOfType<ScoreManager>();
-        if (sm != null )
-        {
-            Debug.LogError("No Scoremanager!");
-        }
+
+
+        //sm = GameObject.FindObjectOfType<ScoreManager>();
+        //if (sm != null )
+        //{
+        //    Debug.LogError("No Scoremanager!");
+        //}
     }
 
     // Update is called once per frame
@@ -37,7 +41,7 @@ public class ShapeChange : MonoBehaviour
             if (BoxTime >= timeThreshold)
             {
                 BoxTime -= timeThreshold;
-                sm.setScore -= 50;
+                Score.CurrentScore -= 50;
             }
         }
     }
@@ -61,7 +65,7 @@ public class ShapeChange : MonoBehaviour
         // If the box disguise is active, switch to the normal disguise
         else if (boxDiguise.activeSelf)
         {
-            sm.setScore -= 250;
+            Score.CurrentScore -= 250;
             // Deactivate box disguise
             boxDiguise.SetActive(false);
             // Activate normal disguise

@@ -18,8 +18,11 @@ public class Orb : MonoBehaviour
     public Vector3 visibleScale = Vector3.one;
     public Vector3 InvisibleScale = Vector3.zero;
     // Start is called before the first frame update
+
+    private MeshRenderer Orbmesh;
     void Start()
     {
+        Orbmesh = GetComponent<MeshRenderer>();
         state = OrbState.Visible;
         this.timer = time;
         //normalScale = transform.localScale;
@@ -33,13 +36,14 @@ public class Orb : MonoBehaviour
         switch (state)
         {
             case OrbState.Visible:
-                this.gameObject.GetComponent<MeshRenderer>().enabled = true;
+                Orbmesh.enabled = true;
+                //this.gameObject.GetComponent<MeshRenderer>().enabled = true;
                 //UpdateScale(visibleScale);
                 break;
 
             case OrbState.Invisible:
-                
-                this.gameObject.GetComponent<MeshRenderer>().enabled = false;
+                Orbmesh.enabled = false;
+                //this.gameObject.GetComponent<MeshRenderer>().enabled = false;
                 //UpdateScale(InvisibleScale);
                 break;
 

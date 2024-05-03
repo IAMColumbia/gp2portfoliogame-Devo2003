@@ -1,3 +1,4 @@
+using Assets.Scripts;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -8,8 +9,9 @@ public class ScoreManager : MonoBehaviour
 
     public static ScoreManager instance;
     public TMP_Text scoreText;
-    public int setScore;
+    //public int setScore;
 
+    
     private void Awake()
     {
         if (instance == null)
@@ -26,12 +28,15 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        setScore = 2000;
+        scoreText.text = "Score: " + Score.CurrentScore.ToString();
+        //setScore = 2000;
     }
 
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = "Score: " + setScore;
+        scoreText.text = "Score: " + Score.CurrentScore.ToString();
+        //scoreText.text = Score.CurrentScore.ToString();
+        //scoreText.text = "Score: " + setScore;
     }
 }

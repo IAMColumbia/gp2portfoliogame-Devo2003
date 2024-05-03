@@ -1,3 +1,4 @@
+using Assets.Scripts;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,11 +13,11 @@ public class OrbManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sm = GameObject.FindObjectOfType<ScoreManager>();
-        if (sm != null)
-        {
-            Debug.LogError("No Scoremanager!");
-        }
+        //sm = GameObject.FindObjectOfType<ScoreManager>();
+        //if (sm != null)
+        //{
+        //    Debug.LogError("No Scoremanager!");
+        //}
     }
 
     // Update is called once per frame
@@ -28,7 +29,7 @@ public class OrbManager : MonoBehaviour
     
     public void CollectOrb()
     {
-        sm.setScore += 150;
+        Score.CurrentScore += 250;
         OrbCount++;
         if (OrbCount == 5)
         {
