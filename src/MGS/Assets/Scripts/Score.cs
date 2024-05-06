@@ -8,10 +8,28 @@ namespace Assets.Scripts
 {
     public static class Score
     {
-        public static int CurrentScore = 2000;
-        public static int HighScore;
-        public static int StartScore;
+        public static int CurrentScore = 1000;
+        public static int HighScore = 1000;
+        //public static int L
+        //public static int FinalScore;
+        //public static int StartScore;
 
-        
+
+        public static void UpdateScore()
+        {
+            
+            if (CurrentScore > HighScore)
+            {
+                HighScore = CurrentScore;
+            }
+            
+            
+        }
+
+        public static void AddScore(int score)
+        {
+            CurrentScore += score;
+            //scoreText.text = "Score: " + Score.CurrentScore.ToString();
+        }
     }
 }

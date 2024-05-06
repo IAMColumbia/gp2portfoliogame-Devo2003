@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
+using Assets.Scripts;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
@@ -13,6 +13,10 @@ public class TimeManager : MonoBehaviour
     public float timeLimit;
     public float timer;
     public TMP_Text TimeText;
+
+    
+
+
     
 
     // Start is called before the first frame update
@@ -21,12 +25,6 @@ public class TimeManager : MonoBehaviour
         timeLimit = 121;
         timer = timeLimit;
 
-        //bestTime = 90;
-
-        //UpdateTime();
-
-       
-       
     }
 
 
@@ -44,8 +42,9 @@ public class TimeManager : MonoBehaviour
         {
             TimesUp();
         }
+
         
-       
+
     }
 
 
