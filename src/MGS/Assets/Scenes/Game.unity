@@ -2813,7 +2813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPointPrefab: {fileID: 1061579004}
-  OrbCount: 4
+  OrbCount: 0
 --- !u!114 &750916544
 MonoBehaviour:
   m_ObjectHideFlags: 0
