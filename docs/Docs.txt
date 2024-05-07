@@ -1,0 +1,35 @@
+Standard Documentation: 
+
+Game Name: Sneaky Cyl
+
+Game Description Short: This game is a sneaking game where you avoid cameras, and collect objects to unlock the end.
+
+Game Description Long: The game is a stealth game where you avoid the camera's sight of vision that moves left to right. The cameras also have a blind spot under its position if it's not on an angle. There are five orbs in the arena that you need to collect at the right time since they do go invisible for a time. Once all orbs are collected the end point block will spawn to end the game once you grab it. There is also a timer. When the timer runs out the game is over. You are also able to turn into a brown box(Cardboard Box) . This box lets you go unseen from cameras, but you lose points while being in that mode, and when it's equipped.  
+
+Credits: Music used from:                                    Metal Gear Solid VR Missions and Integral Unreleased OST DalekEnclave123 · Playlist DalekEnclave123 · Playlist • •                   
+
+Genre: Stealth/ puzzle
+Postmortem
+Class UML diagram with descriptions of class responsibilities.
+What patterns did you implement in your game. How did the help manage the structure of your game classes and their dependencies.
+The pattern I added was the singleton pattern,but wasn't really used, or would find other patterns that were really needed in my game. 
+What challenges did you have making your game components? What techniques did you use to overcome these challenges.
+The game components were not really a big trouble to get done. The only trouble I had was understanding that the game components don't have to be attached to the object with the shape and scripts all in one. A empty object can have scripts, and the ones with the mesh can be the child of the empty object.  
+Rate how reusable the game codebase is? What percentage is specific to the game? What percentage is specific to the platform (monogame/unity)?
+Only maybe 20 to 30 percent of the code is reusable. There's code that is tied to the monobehaviour, but a lot of the state snippets can be used.
+How maintainable is your code? Is it easy to add more enemies, pickups, weapons, levels etc?
+The code is mostly not very maintainable since I have all my classes inherit from the monobehaviour class. On top of that adding another 20 objects will be tedious since I did not use any prefabs and most objects were mostly manually created and placed in locations, while also every item having the same scripts with each of them have different number variables for their actions. When adding a level I think you can add a level easily, but if you use another scene. 
+Did you finish your game? Is there any outstanding technical debt?
+I did complete my game. There isn't really a huge amount of technical debt in my code. The only thing I can think of is making the shape change class have state instead of using a bool.
+
+HOW TO PLAY:   
+
+Movement: WASD keys
+
+Spacekey: Switch to box disguises, and back. When in box form you won't be spotted, but will not be able to collect items while using this item, and will also lose points from your overall score. 
+
+ 
+Objective: Collect all orbs in the arena without getting spotted. And reach the endpoint(green block) to finish the level.Each collectible item gives you points. 
+
+
+
