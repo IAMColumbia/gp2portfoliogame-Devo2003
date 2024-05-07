@@ -19,19 +19,6 @@ public class ScoreManager : MonoBehaviour
         scoreText.text = "Score: " + Score.CurrentScore.ToString();
         HighscoreText.text = "HighScore: " + Score.HighScore.ToString();
         TotalScoreText.text = "TotalScore: " + Score.totalScore.ToString();    
-        //setScore = 2000;
-
-
-        //public static void UpdateScore(int newScore)
-        //{
-        //    CurrentScore = newScore;
-        //    if (newScore > HighScore)
-        //    {
-        //        HighScore = newScore;
-        //    }
-        //}
-
-
     }
 
     // Update is called once per frame
@@ -39,11 +26,5 @@ public class ScoreManager : MonoBehaviour
     {
         scoreText.text = "Score: " + Score.CurrentScore.ToString();
         Score.UpdateScore();
-
-        //int scoreToAdd = Mathf.RoundToInt(timer); // Each remaining second adds 1 point
-        //Score.AddScore(scoreToAdd);
-        //scoreText.text = "HighScore: " + Score.HighScore.ToString();
-        //scoreText.text = Score.CurrentScore.ToString();
-        //scoreText.text = "Score: " + setScore;
     }
 }

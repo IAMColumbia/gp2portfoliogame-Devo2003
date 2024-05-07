@@ -1,3 +1,4 @@
+using Assets.Scripts;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerCollision : MonoBehaviour
 {
     // Start is called before the first frame update
-    //public AudioClip VictorySound;
+
     void Start()
     {
         om = FindObjectOfType<OrbManager>();
@@ -19,7 +20,7 @@ public class PlayerCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //om = new OrbManager();
+       
     }
 
     private void OnTriggerEnter(Collider other)
@@ -34,21 +35,14 @@ public class PlayerCollision : MonoBehaviour
                 Debug.Log("Player collided with an orb!");
                 o.Collect();
                 om.CollectOrb();
-                //if (o.state != OrbState.Collected)
-                //{
-                //    Debug.Log("Player collided with an orb!");
-                //    o.Collect();
-                //    om.CollectOrb();
-                //}
-
             }
 
         }
 
         if (other.CompareTag("Finish"))
         {
+            Score.CurrentScore += 600;
             SceneManager.LoadScene("Finished");
-            //AudioSource.PlayClipAtPoint(VictorySound, transform.position);
         }
     }
 

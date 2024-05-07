@@ -37,14 +37,11 @@ public class Orb : MonoBehaviour
         {
             case OrbState.Visible:
                 Orbmesh.enabled = true;
-                //this.gameObject.GetComponent<MeshRenderer>().enabled = true;
-                //UpdateScale(visibleScale);
+
                 break;
 
             case OrbState.Invisible:
                 Orbmesh.enabled = false;
-                //this.gameObject.GetComponent<MeshRenderer>().enabled = false;
-                //UpdateScale(InvisibleScale);
                 break;
 
             case OrbState.Collected:
@@ -70,10 +67,6 @@ public class Orb : MonoBehaviour
             }
             timer = time;
         }
-    }
-    public void UpdateScale(Vector3 scale)
-    {
-        transform.localScale = scale;
     }
 
     public void Collect()

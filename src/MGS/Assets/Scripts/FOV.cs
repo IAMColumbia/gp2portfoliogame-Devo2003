@@ -15,15 +15,10 @@ public class FOV : MonoBehaviour
     public int RaySize = 30;
 
    
-    //ScoreManager sm;
     // Start is called before the first frame update
     void Start()
     {
-        //sm = GameObject.FindObjectOfType<ScoreManager>();
-        //if (sm != null)
-        //{
-        //    Debug.LogError("No Scoremanager!");
-        //}
+   
     }
 
     // Update is called once per frame
@@ -62,7 +57,6 @@ public class FOV : MonoBehaviour
 
                 SceneManager.LoadScene("GameOver");
                 
-
                 // Calculate rotation to align triangle with ray direction
                 Quaternion rotation = Quaternion.LookRotation(rayDirection, Vector3.up);
                

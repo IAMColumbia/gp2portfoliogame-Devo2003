@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SightFunction : MonoBehaviour
 {
+    //  USED AS TESTING ONLY
     public float maxRaycastDistance = 10f;
 
     private Mesh mesh;

@@ -9,30 +9,20 @@ using Unity.VisualScripting;
 
 public class TimeManager : MonoBehaviour
 {
-   
     public float timeLimit;
     public float timer;
     public TMP_Text TimeText;
-
-    
-
-
-    
 
     // Start is called before the first frame update
     void Start()
     {
         timeLimit = 121;
         timer = timeLimit;
-
     }
-
 
     // Update is called once per frame
     void Update()
     {
-        
-
         if (timer > 0)
         {
             timer -= Time.deltaTime;
@@ -42,12 +32,7 @@ public class TimeManager : MonoBehaviour
         {
             TimesUp();
         }
-
-        
-
     }
-
-
 
     public void Timer()
     {
@@ -58,12 +43,8 @@ public class TimeManager : MonoBehaviour
         TimeText.text = "Time Limit: " + string.Format("{0:00}:{1:00}", mins, secs);
     }
 
-   
-
     public void TimesUp()
     {
         SceneManager.LoadScene("GameOver");
     }
-
-   
 }

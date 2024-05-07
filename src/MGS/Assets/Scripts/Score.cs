@@ -9,7 +9,7 @@ namespace Assets.Scripts
     public class Score
     {
         public static int CurrentScore = 1000;
-        public static int HighScore = 1000;
+        public static int HighScore = 2100;
 
 
         public static int startingScore = 1000;
@@ -22,7 +22,7 @@ namespace Assets.Scripts
         {
             get
             {
-                // If the instance is null, create a new instance
+               
                 if (instance == null)
                 {
                     instance = new Score();

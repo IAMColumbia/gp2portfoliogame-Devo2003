@@ -5,19 +5,13 @@ using UnityEngine;
 
 public class OrbManager : MonoBehaviour
 {
-
-    ScoreManager sm;
     public GameObject endPointPrefab;
 
     public int OrbCount = 0;
     // Start is called before the first frame update
     void Start()
     {
-        //sm = GameObject.FindObjectOfType<ScoreManager>();
-        //if (sm != null)
-        //{
-        //    Debug.LogError("No Scoremanager!");
-        //}
+
     }
 
     // Update is called once per frame

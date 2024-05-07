@@ -20,11 +20,7 @@ public class ShapeChange : MonoBehaviour
     {
 
 
-        //sm = GameObject.FindObjectOfType<ScoreManager>();
-        //if (sm != null )
-        //{
-        //    Debug.LogError("No Scoremanager!");
-        //}
+
     }
 
     // Update is called once per frame
