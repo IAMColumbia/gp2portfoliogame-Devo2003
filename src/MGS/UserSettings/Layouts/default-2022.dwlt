@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 116
+  controlID: 95
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 424
     height: 987
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -94,8 +94,8 @@ MonoBehaviour:
     y: 0
     width: 179
     height: 715
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 37
+  controlID: 38
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 38
+  controlID: 39
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -321,7 +321,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Audio
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -329,16 +329,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Audio
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\407044\Desktop\gp2portfoliogame-Devo2003\src\MGS
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f8400000
-    m_LastClickedID: 16632
-    m_ExpandedIDs: 00000000b4400000504100009841000000ca9a3bffffff7f
+    m_SelectedIDs: 98410000
+    m_LastClickedID: 16792
+    m_ExpandedIDs: 00000000b44000005041000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -506,23 +506,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 6c820000
       m_LastClickedID: 0
-      m_ExpandedIDs: 6c7dfeff0891feff6e96feffbc96feff6098feff7c98feffa898feffc498feffa09afeff769dfeffa0affefff4affeff40b0feff66bcfeff36d1feffecd2feffbad3feff44d4feff90defeff5804ffff5408ffff680dffffb40dffff080effff5e0effffb80effff100fffff6a0fffff9010ffffde10fffff821ffff4428ffff502affffb08c00000cbf00000ccb0000fae60000f8ec000082ef000040f0000038f50000
+      m_ExpandedIDs: be03ffff1a04ffff7804ffffd604ffffde08ffffe60dffff180fffff4a18ffff9219fffff019ffff381affff841affffe01affff3e1bffff9c1bffff221effff7e26ffff4c27ffffc627ffff382affffe2930000149e0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Start
-        m_OriginalName: Start
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 74880
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 4}
       m_SearchString: 
@@ -914,9 +914,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.525, y: 1.41, z: -0.25}
+    m_Target: {x: -8.72, y: 0.59, z: 10.309999}
     speed: 2
-    m_Value: {x: -0.525, y: 1.41, z: -0.25}
+    m_Value: {x: -8.72, y: 0.59, z: 10.309999}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -966,9 +966,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 2.742055
+    m_Target: 14.884
     speed: 2
-    m_Value: 2.742055
+    m_Value: 14.243062
   m_Ortho:
     m_Target: 0
     speed: 2
