@@ -12,9 +12,9 @@ public class ShapeChange : MonoBehaviour
     public bool InBoxForm = false;
     public float BoxTime = 0f;
     public float timeThreshold = 2f; //loses points every 2 secs while in box form
-    // Start is called before the first frame update
+                                     // Start is called before the first frame update
 
-   
+
 
     void Start()
     {

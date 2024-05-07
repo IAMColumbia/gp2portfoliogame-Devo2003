@@ -7,21 +7,18 @@ using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
-
-    //public static ScoreManager instance;
     public TMP_Text scoreText;
     public TMP_Text HighscoreText;
-    //public TMP_Text LowcoreText;
-    public int startingScore = 1000;
-
-
+    public TMP_Text TotalScoreText;
 
     // Start is called before the first frame update
     void Start()
     {
-        Score.CurrentScore = startingScore;
+        Score.totalScore = Score.CurrentScore;
+        Score.CurrentScore = Score.startingScore;
         scoreText.text = "Score: " + Score.CurrentScore.ToString();
         HighscoreText.text = "HighScore: " + Score.HighScore.ToString();
+        TotalScoreText.text = "TotalScore: " + Score.totalScore.ToString();    
         //setScore = 2000;
 
 
@@ -41,8 +38,6 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         scoreText.text = "Score: " + Score.CurrentScore.ToString();
-
-        
         Score.UpdateScore();
 
         //int scoreToAdd = Mathf.RoundToInt(timer); // Each remaining second adds 1 point

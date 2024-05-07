@@ -6,30 +6,40 @@ using System.Threading.Tasks;
 
 namespace Assets.Scripts
 {
-    public static class Score
+    public class Score
     {
         public static int CurrentScore = 1000;
         public static int HighScore = 1000;
-        //public static int L
-        //public static int FinalScore;
-        //public static int StartScore;
+
+
+        public static int startingScore = 1000;
+        public static int totalScore;
+        // Private static variables to hold the instance of the class
+        private static Score instance;
+
+        // Public properties to access the instance
+        public static Score Instance
+        {
+            get
+            {
+                // If the instance is null, create a new instance
+                if (instance == null)
+                {
+                    instance = new Score();
+                }
+                return instance;
+            }
+        }
 
 
         public static void UpdateScore()
         {
-            
-            if (CurrentScore > HighScore)
+            if (totalScore > HighScore)
             {
-                HighScore = CurrentScore;
+                HighScore = totalScore;
             }
-            
-            
         }
 
-        public static void AddScore(int score)
-        {
-            CurrentScore += score;
-            //scoreText.text = "Score: " + Score.CurrentScore.ToString();
-        }
+        
     }
 }
